@@ -4,6 +4,10 @@ version = "0.1.0"
 description = ""
 authors = ["sharknoise <sharknoise@gmail.com>"]
 
+packages = [
+  { include = "task_manager" },
+]
+
 [tool.poetry.dependencies]
 python = "^3.8"
 django = "^3.1.12"
