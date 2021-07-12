@@ -10,6 +10,13 @@ venv: .venv
 server:
 	poetry run python manage.py runserver
 
+.PHONY: static
+static:
+	poetry run python manage.py collectstatic
+
+.PHONY: newserver
+newserver: static server
+
 .PHONY: secretkey
 secretkey:
 	@poetry run python -c 'from django.utils.crypto import get_random_string; print(get_random_string(64))'
