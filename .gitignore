@@ -8,4 +8,5 @@ coverage.xml
 .coverage
 *.env
 .DS_Store
+staticfiles
 
