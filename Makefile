@@ -17,6 +17,14 @@ static:
 .PHONY: newserver
 newserver: static server
 
+.PHONY: messages
+messages:
+	poetry run django-admin makemessages -l ru
+
+.PHONY: translations
+translations:
+	poetry run django-admin compilemessages
+
 .PHONY: secretkey
 secretkey:
 	@poetry run python -c 'from django.utils.crypto import get_random_string; print(get_random_string(64))'

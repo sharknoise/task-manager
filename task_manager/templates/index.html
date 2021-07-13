@@ -1,4 +1,5 @@
 <!doctype html>
+{% load i18n %}
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -42,18 +43,21 @@
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#">{% trans 'Home' %}<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Users</a>
+            <a class="nav-link" href="#">{% trans 'Users' %}</a>
           </li>
         </ul>
         <ul class="navbar-nav px-3">
-          <li class="nav-item text-nowrap">
-            <a class="nav-link" href="#">Sign in</a>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{{ request.LANGUAGE_CODE }}</a>
           </li>
           <li class="nav-item text-nowrap">
-            <a class="nav-link" href="#">Register</a>
+            <a class="nav-link" href="#">{% trans 'Sign in' %}</a>
+          </li>
+          <li class="nav-item text-nowrap">
+            <a class="nav-link" href="#">{% trans 'Register' %}</a>
           </li>
         </ul>
       </div>
@@ -62,8 +66,10 @@
     <main role="main" class="container">
 
       <div class="starter-template">
-        <h1>Task Manager</h1>
-        <p class="lead">[site under construction]<br> ...</p>
+        <h1>{% trans 'Task Manager' %}</h1>
+        <p class="lead">{% trans '[site under construction]' %}
+          <br> ... 
+        </p>
       </div>
 
     </main><!-- /.container -->

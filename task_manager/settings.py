@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 from os import getenv, path
 from pathlib import Path
-
+from django.utils.translation import gettext_lazy as _
 import dj_database_url
 from dotenv import load_dotenv
 
@@ -51,11 +51,10 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    # Simplified static file serving.
-    # https://warehouse.python.org/project/whitenoise/
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -116,6 +115,14 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
+#LANGUAGE_CODE = 'ru-ru'
+LOCALE_PATHS = (
+    BASE_DIR / 'task_manager/locale',
+)
+LANGUAGES = [
+    ('ru', _('Русский')),
+    ('en', _('English')),
+]
 
 TIME_ZONE = 'UTC'
 
