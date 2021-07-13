@@ -42,10 +42,11 @@
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">{% trans 'Home' %}<span class="sr-only">(current)</span></a>
+          <li class="nav-item {% if request.path == "/" %}active{% endif %}">
+            <a class="nav-link" href="{% url 'index' %}">{% trans 'Home' %}<span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item">
+          {% url 'users_list' as users_list %}
+          <li class="nav-item {% if request.path == users_list %}active{% endif %}">
             <a class="nav-link" href="{% url 'users_list' %}">{% trans "Users" %}</a>
           </li>
         </ul>
@@ -53,10 +54,10 @@
           <li class="nav-item">
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{{ request.LANGUAGE_CODE }}</a>
           </li>
-          <li class="nav-item text-nowrap">
+          <li class="nav-item">
             <a class="nav-link" href="#">{% trans 'Sign in' %}</a>
           </li>
-          <li class="nav-item text-nowrap">
+          <li class="nav-item">
             <a class="nav-link" href="#">{% trans 'Register' %}</a>
           </li>
         </ul>
