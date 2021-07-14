@@ -41,6 +41,7 @@ ALLOWED_HOSTS = [
 
 INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
+    'custom_commands.apps.CustomCommandsConfig',
     'tasks.apps.TasksConfig',
     'django.contrib.admin',
     'django.contrib.auth',

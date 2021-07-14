@@ -19,11 +19,11 @@ newserver: static server
 
 .PHONY: messages
 messages:
-	poetry run django-admin makemessages -l ru
+	poetry run python manage.py makemessages_nofuzzy -l ru
 
 .PHONY: translations
 translations:
-	poetry run django-admin compilemessages
+	poetry run django-admin compilemessages --ignore=.venv
 
 .PHONY: secretkey
 secretkey:
