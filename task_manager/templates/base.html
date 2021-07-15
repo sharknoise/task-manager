@@ -65,6 +65,10 @@
     </nav>
 
     <main role="main" class="container">
+      {% include 'messages.html' %}
+      {% block messages %}
+      {% endblock %}
+
       {% block content %}
       {% endblock %}
     </main><!-- /.container -->
