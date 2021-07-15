@@ -55,7 +55,7 @@
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{{ request.LANGUAGE_CODE }}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">{% trans 'Sign in' %}</a>
+            <a class="nav-link" href="{% url 'login' %}">{% trans 'Sign in' %}</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'register' %}">{% trans 'Register' %}</a>
