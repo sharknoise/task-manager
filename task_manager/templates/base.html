@@ -35,7 +35,7 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" href="#"><img src="{% static 'images/tm.png' %}" /></a>
+      <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'images/tm.png' %}" /></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -58,7 +58,7 @@
             <a class="nav-link" href="#">{% trans 'Sign in' %}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">{% trans 'Register' %}</a>
+            <a class="nav-link" href="{% url 'register' %}">{% trans 'Register' %}</a>
           </li>
         </ul>
       </div>
