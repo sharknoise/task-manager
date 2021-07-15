@@ -21,5 +21,6 @@ class RegisterUserView(SuccessMessageMixin, generic.CreateView):
     success_message = _('You have successfully registered!')
 
 
-class LoginUserView(LoginView):
+class LoginUserView(SuccessMessageMixin, LoginView):
     template_name = 'users/user-login.html'
+    success_message = _('You are logged in.')

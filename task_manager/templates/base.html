@@ -54,17 +54,24 @@
           <li class="nav-item">
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{{ request.LANGUAGE_CODE }}</a>
           </li>
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">{% trans 'Sign out' %}</a>
+          </li>
+          {% else %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'login' %}">{% trans 'Sign in' %}</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'register' %}">{% trans 'Register' %}</a>
           </li>
+          {% endif %}
         </ul>
       </div>
     </nav>
 
     <main role="main" class="container">
+
       {% include 'messages.html' %}
       {% block messages %}
       {% endblock %}
