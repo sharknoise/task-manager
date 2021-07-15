@@ -15,5 +15,5 @@ class UsersListView(generic.ListView):
 class RegisterUserView(SuccessMessageMixin, generic.CreateView):
     model = get_user_model()
     form_class = RegistrationForm
-    template_name = 'users/registration/user-register.html'
+    template_name = 'users/user-register.html'
     success_url = reverse_lazy('users')
