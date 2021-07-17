@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-14 12:02+0000\n"
+"POT-Creation-Date: 2021-07-17 14:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,13 +20,13 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: task_manager/settings.py:124
-msgid "Русский"
-msgstr ""
+#: task_manager/settings.py:128
+msgid "Russian"
+msgstr "Русский"
 
-#: task_manager/settings.py:125
+#: task_manager/settings.py:129
 msgid "English"
-msgstr ""
+msgstr "Английский"
 
 #: task_manager/templates/base.html:46
 msgid "Home"
@@ -37,13 +37,19 @@ msgstr "Главная"
 msgid "Users"
 msgstr "Пользователи"
 
-#: task_manager/templates/base.html:58
-msgid "Sign in"
-msgstr "Войти"
+#: task_manager/templates/base.html:59
+msgid "Sign out"
+msgstr "Выход"
 
-#: task_manager/templates/base.html:61
+#: task_manager/templates/base.html:63
+#: task_manager/templates/users/user-login.html:12
+msgid "Sign in"
+msgstr "Вход"
+
+#: task_manager/templates/base.html:66
+#: task_manager/templates/users/user-register.html:11
 msgid "Register"
-msgstr "Зарегистрироваться"
+msgstr "Регистрация"
 
 #: task_manager/templates/index.html:6
 msgid "Task Manager"
@@ -52,6 +58,10 @@ msgstr "Менеджер задач"
 #: task_manager/templates/index.html:7
 msgid "[site under construction]"
 msgstr "[сайт в разработке]"
+
+#: task_manager/templates/users/user-register.html:8
+msgid "Please fill the registration form"
+msgstr "Пожалуйста, заполните анкету"
 
 #: task_manager/templates/users/users-list.html:12
 msgid "ID"

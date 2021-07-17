@@ -125,7 +125,7 @@ LOCALE_PATHS = (
     BASE_DIR / 'task_manager/locale',
 )
 LANGUAGES = [
-    ('ru', _('Русский')),
+    ('ru', _('Russian')),
     ('en', _('English')),
 ]
 
