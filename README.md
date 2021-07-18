@@ -13,4 +13,5 @@ Features planned:
 - filtering the task list  
   
 When opening for the first time, the link might take several seconds to load. 
+  
 https://sharknoise-task-manager.herokuapp.com/
