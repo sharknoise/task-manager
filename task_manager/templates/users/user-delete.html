@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <p>{% trans "Delete the account? This operation is irreversible." %}</p>
+        <button class="btn btn-danger" type="submit">{% trans 'Yes, delete' %}</button>
+    </form>
+{% endblock %}

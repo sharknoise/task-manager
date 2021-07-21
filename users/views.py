@@ -33,3 +33,10 @@ class LogoutUserView(SuccessMessageMixin, LogoutView):
         messages.success(request, _('You have logged out.'))
         # LogoutView.dispatch() is the method that calls auth_logout()
         return super().dispatch(request, *args, **kwargs)
+
+
+class DeleteUserView(generic.DeleteView):
+    model = get_user_model()
+    template_name = 'users/user-delete.html'
+    success_url = reverse_lazy('users_list')
+    success_message = _('You have deleted your account.')

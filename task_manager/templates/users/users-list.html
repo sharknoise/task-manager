@@ -13,15 +13,20 @@
         <th>{% trans 'Username' %}</th>
         <th>{% trans 'Full name' %}</th>
         <th>{% trans 'Date joined' %}</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
     {% for object in object_list %}
         <tr>
-            <td>{{ object.id }}</td>
-            <td>{{ object.username }}</td>
-            <td>{{ object.first_name }} {{ object.last_name }}</td>
-            <td>{{ object.date_joined }}</td>
+          <td>{{ object.id }}</td>
+          <td>{{ object.username }}</td>
+          <td>{{ object.first_name }} {{ object.last_name }}</td>
+          <td>{{ object.date_joined }}</td>
+          <td  class="col-sm-2">
+            <a class="dropdown-item" href="#">{% trans 'Update' %}</a>
+            <a class="dropdown-item" href="{% url 'delete' object.id %}">{% trans 'Delete' %}</a>
+          </td>
         </tr>
     {% endfor %}
     </tbody>
