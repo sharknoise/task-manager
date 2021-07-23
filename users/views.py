@@ -8,6 +8,7 @@ from django.urls import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
 
 from users.forms import RegistrationForm
+from users.mixins import NoPermissionMixin, NoPermissionRedirectMixin
 
 
 class UsersListView(generic.ListView):
@@ -36,7 +37,12 @@ class LogoutUserView(SuccessMessageMixin, LogoutView):
         return super().dispatch(request, *args, **kwargs)
 
 
-class DeleteUserView(LoginRequiredMixin, generic.DeleteView):
+class DeleteUserView(
+    NoPermissionMixin,
+    NoPermissionRedirectMixin,
+    LoginRequiredMixin,
+    generic.DeleteView,
+):
     login_url = reverse_lazy('login')
     model = get_user_model()
     template_name = 'users/user-delete.html'
