@@ -13,6 +13,7 @@ from os import getenv, path
 from pathlib import Path
 from django.utils.translation import gettext_lazy as _
 import dj_database_url
+import sys
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -91,11 +92,16 @@ WSGI_APPLICATION = 'task_manager.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# dj-datbase-url setting
-
 DATABASES = {}
-DATABASE_URL = getenv("DATABASE_URL")
+DATABASE_URL = getenv('DATABASE_URL')
 DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+
+if 'test' in sys.argv:
+    DATABASES['default'] = {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'test_database',
+    }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
