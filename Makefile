@@ -1,3 +1,9 @@
+.PHONY: test
+test:
+	poetry run coverage run --omit='.venv/*' manage.py test
+	poetry run coverage xml
+	poetry run coverage report
+
 .PHONY: migrate
 migrate:
 	heroku run python manage.py migrate -a sharknoise-task-manager
