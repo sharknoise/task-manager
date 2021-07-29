@@ -55,8 +55,12 @@
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{{ request.LANGUAGE_CODE }}</a>
           </li>
           {% if user.is_authenticated %}
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{{ user.get_username }}</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="userdropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ user.get_username }}</a>
+            <div class="dropdown-menu" aria-labelledby="userdropdown">
+              <a class="dropdown-item" href="{% url 'update' user.id %}">{% trans 'Edit' %}</a>
+              <a class="dropdown-item" href="{% url 'delete' user.id %}">{% trans 'Delete' %}</a>
+            </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'logout' %}">{% trans 'Sign out' %}</a>
