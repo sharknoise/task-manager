@@ -1,6 +1,6 @@
 .PHONY: test
 test:
-	poetry run coverage run --omit='.venv/*' manage.py test
+	poetry run coverage run --include='task_manager/*','tasks/*','users/*' manage.py test
 	poetry run coverage xml
 	poetry run coverage report
 
