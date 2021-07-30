@@ -59,5 +59,5 @@ class UpdateUserView(
     model = get_user_model()
     template_name = 'users/user-update.html'
     form_class = RegistrationForm
-    success_message = _('Your profile has been updated')
+    success_message = _('Your profile has been updated.')
     success_url = reverse_lazy('users_list')

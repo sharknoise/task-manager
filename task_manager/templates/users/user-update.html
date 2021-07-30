@@ -5,7 +5,7 @@
 {% block content %}
 
   <form method="post">
-    <h1 class="h3">{% trans 'Update your account information' %}</h1>
+    <h1 class="h3">{% trans 'Update your account information.' %}</h1>
     {% csrf_token %}
     {{ form|crispy }}
     <button class="btn btn-dark" type="submit">{% trans 'Update' %}</button>

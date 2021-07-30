@@ -13,7 +13,7 @@ class NoPermissionMixin(UserPassesTestMixin):
 
     def dispatch(self, request, *args, **kwargs):
         self.permission_denied_message = _(
-            'You are not authorized to access this page',
+            'You are not authorized to access this page.',
         )
         self.redirect_url = reverse_lazy('users_list')
         return super().dispatch(request, *args, **kwargs)
