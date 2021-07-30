@@ -23,7 +23,7 @@
           <td>{{ object.username }}</td>
           <td>{{ object.first_name }} {{ object.last_name }}</td>
           <td>{{ object.date_joined }}</td>
-          <td  class="col-sm-2">
+          <td class="edit-delete-cell">
             <a class="dropdown-item" href="{% url 'update' object.id %}">{% trans 'Edit' %}</a>
             <a class="dropdown-item" href="{% url 'delete' object.id %}">{% trans 'Delete' %}</a>
           </td>
