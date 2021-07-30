@@ -1,10 +1,11 @@
-from task_manager.settings import LOGIN_URL
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.urls import reverse_lazy
-from django.utils.translation import ugettext_lazy as _
 from django.contrib import messages
 from django.contrib.auth import REDIRECT_FIELD_NAME
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.http import HttpResponseRedirect
+from django.urls import reverse_lazy
+from django.utils.translation import ugettext_lazy as _
+
+from task_manager.settings import LOGIN_URL
 
 
 class NoPermissionMixin(UserPassesTestMixin):
@@ -47,4 +48,3 @@ class LoginRequiredRedirectMixin(LoginRequiredMixin):
             next_url=self.request.get_full_path(),
         )
         return super().dispatch(request, *args, **kwargs)
-

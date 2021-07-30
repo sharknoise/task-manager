@@ -2,12 +2,16 @@ from django.contrib import messages
 from django.contrib.auth import get_user_model
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.messages.views import SuccessMessageMixin
-from django.views import generic
 from django.urls import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
+from django.views import generic
 
 from users.forms import RegistrationForm
-from users.mixins import LoginRequiredRedirectMixin, NoPermissionMixin, NoPermissionRedirectMixin
+from users.mixins import (
+    LoginRequiredRedirectMixin,
+    NoPermissionMixin,
+    NoPermissionRedirectMixin,
+)
 
 
 class UsersListView(generic.ListView):

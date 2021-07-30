@@ -4,6 +4,10 @@ test:
 	poetry run coverage xml
 	poetry run coverage report
 
+.PHONY: lint
+lint:
+	poetry run flake8 --extend-ignore=WPS,D
+
 .PHONY: migrate
 migrate:
 	heroku run python manage.py migrate -a sharknoise-task-manager
