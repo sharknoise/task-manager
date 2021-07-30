@@ -32,6 +32,7 @@
     </style>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'base-style.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}">
   </head>
   <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
@@ -48,6 +49,10 @@
           {% url 'users_list' as users_list %}
           <li class="nav-item {% if request.path == users_list %}active{% endif %}">
             <a class="nav-link" href="{% url 'users_list' %}">{% trans "Users" %}</a>
+          </li>
+          {% url 'statuses' as statuses %}
+          <li class="nav-item {% if request.path == statuses %}active{% endif %}">
+            <a class="nav-link" href="{% url 'statuses' %}">{% trans "Statuses" %}</a>
           </li>
         </ul>
         <ul class="navbar-nav">
