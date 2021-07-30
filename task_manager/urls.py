@@ -23,6 +23,7 @@ urlpatterns = [
     path('', tasks_views.IndexView.as_view(), name='index'),
     path('admin/', admin.site.urls),
     path('users/', include('users.urls')),
+    path('statuses/', include('statuses.urls')),
     path('login/', users_views.LoginUserView.as_view(), name='login'),
     path('logout/', users_views.LogoutUserView.as_view(), name='logout'),
 ]

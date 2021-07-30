@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'custom_commands',
     'tasks',
     'users',
+    'statuses',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
