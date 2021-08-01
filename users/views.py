@@ -6,12 +6,12 @@ from django.urls import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
 from django.views import generic
 
-from users.forms import RegistrationForm
-from users.mixins import (
+from task_manager.mixins import (
     LoginRequiredRedirectMixin,
-    SameUserMixin,
     NoPermissionRedirectMixin,
 )
+from users.forms import RegistrationForm
+from users.mixins import SameUserMixin
 
 
 class UsersListView(generic.ListView):
