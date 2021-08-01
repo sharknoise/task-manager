@@ -52,7 +52,7 @@
           </li>
           {% url 'statuses' as statuses %}
           <li class="nav-item {% if request.path == statuses %}active{% endif %}">
-            <a class="nav-link" href="{% url 'statuses' %}">{% trans "Statuses" %}</a>
+            <a class="nav-link" href="{% url 'statuses_list' %}">{% trans "Statuses" %}</a>
           </li>
         </ul>
         <ul class="navbar-nav">

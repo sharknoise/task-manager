@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+{% load i18n %}
+{% block content %}
+  <form method="post">
+    <h1 class="h3">{% trans 'Create a new status' %}</h1>
+    {% csrf_token %}
+    {{ form|crispy }}
+    <br>
+    <button class="btn btn-dark" type="submit">{% trans 'Create' %}</button>
+  </form>
+{% endblock %}
