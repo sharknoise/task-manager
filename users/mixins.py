@@ -8,7 +8,7 @@ from django.utils.translation import ugettext_lazy as _
 from task_manager.settings import LOGIN_URL
 
 
-class NoPermissionMixin(UserPassesTestMixin):
+class SameUserMixin(UserPassesTestMixin):
     def test_func(self):
         return self.get_object().id == self.request.user.id
 

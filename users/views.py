@@ -9,7 +9,7 @@ from django.views import generic
 from users.forms import RegistrationForm
 from users.mixins import (
     LoginRequiredRedirectMixin,
-    NoPermissionMixin,
+    SameUserMixin,
     NoPermissionRedirectMixin,
 )
 
@@ -43,7 +43,7 @@ class LogoutUserView(SuccessMessageMixin, LogoutView):
 class DeleteUserView(
     NoPermissionRedirectMixin,
     LoginRequiredRedirectMixin,
-    NoPermissionMixin,
+    SameUserMixin,
     SuccessMessageMixin,
     generic.DeleteView,
 ):
@@ -56,7 +56,7 @@ class DeleteUserView(
 class UpdateUserView(
     NoPermissionRedirectMixin,
     LoginRequiredRedirectMixin,
-    NoPermissionMixin,
+    SameUserMixin,
     SuccessMessageMixin,
     generic.edit.UpdateView,
 ):
