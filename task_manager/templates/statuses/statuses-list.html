@@ -3,7 +3,7 @@
 {% load i18n %}
 {% block content %}
 <br>
-<h2>{% trans 'Statuses' %}</h2>
+<h2>{% trans 'Task statuses' %}</h2>
 {% if object_list %}
 <div class="table-responsive">
   <table class="table table-striped table-sm">
@@ -13,7 +13,6 @@
         <th>{% trans 'Status name' %}</th>
         <th>{% trans 'Created by' %}</th>
         <th>{% trans 'Date created' %}</th>
-        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -23,10 +22,6 @@
           <td>{{ object.name }}</td>
           <td>{{ object.author}}</td>
           <td>{{ object.created }}</td>
-          <td class="edit-delete-cell">
-            <a class="dropdown-item" href="{% url 'update' object.id %}">{% trans 'Edit' %}</a>
-            <a class="dropdown-item" href="{% url 'delete' object.id %}">{% trans 'Delete' %}</a>
-          </td>
         </tr>
     {% endfor %}
     </tbody>
