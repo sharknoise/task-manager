@@ -27,7 +27,7 @@
           <td>{{ object.author}}</td>
           <td>{{ object.created }}</td>
           <td class="edit-delete-cell">
-            <a class="dropdown-item" href="#">{% trans 'Edit' %}</a>
+            <a class="dropdown-item" href="{% url 'status_update' object.id %}">{% trans 'Edit' %}</a>
             <a class="dropdown-item" href="{% url 'status_delete' object.id %}">{% trans 'Delete' %}</a>
           </td>
         </tr>

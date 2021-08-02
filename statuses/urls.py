@@ -10,4 +10,9 @@ urlpatterns = [
         views.StatusDeleteView.as_view(),
         name='status_delete',
     ),
+    path(
+        '<int:pk>/update/',
+        views.StatusUpdateView.as_view(),
+        name='status_update',
+    ),
 ]

@@ -58,3 +58,16 @@ class StatusDeleteView(
         """
         messages.success(self.request, self.success_message)
         return super().delete(request, *args, **kwargs)
+
+
+class StatusUpdateView(
+    NoPermissionRedirectMixin,
+    LoginRequiredRedirectMixin,
+    SuccessMessageMixin,
+    generic.edit.UpdateView,
+):
+    model = Status
+    fields = ['name']
+    template_name = 'statuses/status-update.html'
+    success_url = reverse_lazy('statuses_list')
+    success_message = _('The status has been updated.')
