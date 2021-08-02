@@ -2,9 +2,10 @@
 
 {% load i18n %}
 {% block content %}
-    <form method="post">
-        {% csrf_token %}
-        <p>{% trans "Delete the account? This operation is irreversible." %}</p>
-        <button class="btn btn-danger" type="submit">{% trans 'Yes, delete' %}</button>
-    </form>
+  <form method="post">
+    {% csrf_token %}
+    <h1 class='h3 mb-4'>{% trans "Account deletion" %} </h1>
+    <p>{% trans "Delete the account? This operation is irreversible." %}</p>
+    <button class="btn btn-danger" type="submit">{% trans 'Yes, delete' %}</button>
+  </form>
 {% endblock %}
