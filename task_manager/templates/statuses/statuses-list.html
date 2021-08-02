@@ -16,6 +16,7 @@
         <th>{% trans 'Status name' %}</th>
         <th>{% trans 'Created by' %}</th>
         <th>{% trans 'Date created' %}</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -25,6 +26,10 @@
           <td>{{ object.name }}</td>
           <td>{{ object.author}}</td>
           <td>{{ object.created }}</td>
+          <td class="edit-delete-cell">
+            <a class="dropdown-item" href="#">{% trans 'Edit' %}</a>
+            <a class="dropdown-item" href="{% url 'status_delete' object.id %}">{% trans 'Delete' %}</a>
+          </td>
         </tr>
     {% endfor %}
     </tbody>

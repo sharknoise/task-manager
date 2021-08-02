@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+{% block content %}
+  <form method="post">
+    {% csrf_token %}
+    <p>{% trans "You are going to delete the following status:" %} <p class="font-weight-bold">{{ object.name }}</p></p>
+    <button class="btn btn-danger" type="submit">{% trans 'Yes, delete' %}</button>
+  </form>
+{% endblock %}
