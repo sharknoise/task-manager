@@ -50,6 +50,9 @@
           <li class="nav-item {% if request.path == users_list %}active{% endif %}">
             <a class="nav-link" href="{% url 'users_list' %}">{% trans "Users" %}</a>
           </li>
+          <li class="nav-item {% if request.path == tasks_list %}active{% endif %}">
+            <a class="nav-link" href="{% url 'tasks_list' %}">{% trans "Tasks" %}</a>
+          </li>
           {% url 'statuses' as statuses %}
           <li class="nav-item {% if request.path == statuses %}active{% endif %}">
             <a class="nav-link" href="{% url 'statuses_list' %}">{% trans "Statuses" %}</a>
