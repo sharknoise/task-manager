@@ -37,3 +37,16 @@ class TaskCreateView(
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+
+class TaskUpdateView(
+    NoPermissionRedirectMixin,
+    LoginRequiredRedirectMixin,
+    SuccessMessageMixin,
+    generic.edit.UpdateView,
+):
+    model = Task
+    template_name = 'tasks/task-update.html'
+    fields = ['name', 'status', 'description', 'executor']
+    success_message = _('The task has been updated.')
+    success_url = reverse_lazy('tasks_list')
