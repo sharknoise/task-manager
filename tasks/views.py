@@ -50,3 +50,8 @@ class TaskUpdateView(
     fields = ['name', 'status', 'description', 'executor']
     success_message = _('The task has been updated.')
     success_url = reverse_lazy('tasks_list')
+
+
+class TaskReadView(generic.DetailView):
+    model = Task
+    template_name = 'tasks/task-read.html'

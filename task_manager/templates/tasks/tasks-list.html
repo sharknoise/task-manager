@@ -22,7 +22,7 @@
     {% for object in object_list %}
         <tr>
           <td>{{ object.id }}</td>
-          <td>{{ object.name }}</td>
+          <td><a href="{% url 'task_read' object.id %}">{{ object.name }}</a></td>
           <td>{{ object.status}}</td>
           <td>{{ object.author}}</td>
           <td>{{ object.executor}}</td>
