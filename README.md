@@ -3,19 +3,19 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/bfeb50561265e4d3d51c/maintainability)](https://codeclimate.com/github/sharknoise/task-manager/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/bfeb50561265e4d3d51c/test_coverage)](https://codeclimate.com/github/sharknoise/task-manager/test_coverage)
 ##
-A task management system built with Django. The project is early in development. Current version: 0.5.0
+A task management system built with Django. The project is early in development. Current version: 0.6.0
   
 Features implemented:
-- registration, logging in, logging out, deleting your account
+- registration, logging in/out, editing/deleting your account
 - viewing the list of registered users
-- viewing the list of task statuses
-- English and Russian versions (displayed depending on your browser settings)     
+- viewing, adding, editing, and deleting task statuses
+- English and Russian versions (displayed depending on your browser settings)
   
 Features planned:
 - assigning tasks
-- changing task status
 - adding task tags
-- filtering the task list  
+- filtering the task list
+- Rollbar error tracking
   
 When opening for the first time, the link might take several seconds to load. 
   
