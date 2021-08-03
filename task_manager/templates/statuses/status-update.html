@@ -9,7 +9,6 @@
     </h1>
     {% csrf_token %}
     {{ form|crispy }}
-    <br>
     <button class="btn btn-dark" type="submit">{% trans 'Update' %}</button>
   </form>
 {% endblock %}

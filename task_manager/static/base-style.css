@@ -8,3 +8,8 @@ body {
 .edit-delete-cell {
   width: 5rem;
 }
+
+.btn {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
