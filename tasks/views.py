@@ -5,6 +5,7 @@ from django.urls import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
 from django.views import View, generic
 
+from tasks.mixins import IsTaskAuthorMixin
 from task_manager.mixins import (
     LoginRequiredRedirectMixin,
     NoPermissionRedirectMixin,
@@ -61,6 +62,7 @@ class TaskReadView(generic.DetailView):
 class TaskDeleteView(
     NoPermissionRedirectMixin,
     LoginRequiredRedirectMixin,
+    IsTaskAuthorMixin,
     generic.edit.DeleteView,
 ):
     model = Task
