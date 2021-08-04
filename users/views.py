@@ -7,6 +7,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.views import generic
 
 from task_manager.mixins import (
+    DeletionErrorMixin,
     LoginRequiredRedirectMixin,
     NoPermissionRedirectMixin,
 )
@@ -45,12 +46,16 @@ class DeleteUserView(
     LoginRequiredRedirectMixin,
     SameUserMixin,
     SuccessMessageMixin,
+    DeletionErrorMixin,
     generic.DeleteView,
 ):
     model = get_user_model()
     template_name = 'users/user-delete.html'
     success_url = reverse_lazy('users_list')
     success_message = _('You have deleted your account.')
+    error_message = _(
+        'Unable to delete the account: this user has a task assigned.',
+    )
 
 
 class UpdateUserView(

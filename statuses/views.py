@@ -1,4 +1,3 @@
-from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
@@ -6,6 +5,7 @@ from django.views import generic
 
 from statuses.models import Status
 from task_manager.mixins import (
+    DeletionErrorMixin,
     LoginRequiredRedirectMixin,
     NoPermissionRedirectMixin,
 )
@@ -42,22 +42,16 @@ class StatusCreateView(
 class StatusDeleteView(
     NoPermissionRedirectMixin,
     LoginRequiredRedirectMixin,
+    DeletionErrorMixin,
     generic.edit.DeleteView,
 ):
     model = Status
     template_name = 'statuses/status-delete.html'
     success_url = reverse_lazy('statuses_list')
     success_message = _('The status has been deleted.')
-
-    def delete(self, request, *args, **kwargs):
-        """
-        Add success message to messages.
-
-        We need this instead of SuccessMessageMixin which
-        can't be used with DeleteView.
-        """
-        messages.success(self.request, self.success_message)
-        return super().delete(request, *args, **kwargs)
+    error_message = _(
+        'Unable to delete the status as it is attached to a task.',
+    )
 
 
 class StatusUpdateView(

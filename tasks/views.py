@@ -5,11 +5,11 @@ from django.urls import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
 from django.views import View, generic
 
-from tasks.mixins import IsTaskAuthorMixin
 from task_manager.mixins import (
     LoginRequiredRedirectMixin,
     NoPermissionRedirectMixin,
 )
+from tasks.mixins import IsTaskAuthorMixin
 from tasks.models import Task
 
 
