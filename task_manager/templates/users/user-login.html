@@ -8,4 +8,5 @@
     {{ form|crispy }}
     <button type="submit" class="btn btn-dark">{% trans 'Sign in' %}</button>
   </form>
+  <a href="{% url 'register' %}">{% trans "Don't have an account?" %}</a>
 {% endblock %}
