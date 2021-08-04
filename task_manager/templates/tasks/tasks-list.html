@@ -29,7 +29,7 @@
           <td>{{ object.created }}</td>
           <td class="edit-delete-cell">
             <a class="dropdown-item" href="{% url 'task_update' object.id %}">{% trans 'Edit' %}</a>
-            <a class="dropdown-item" href="{% url 'tasks_list' %}">{% trans 'Delete' %}</a>
+            <a class="dropdown-item" href="{% url 'task_delete' object.id %}">{% trans 'Delete' %}</a>
           </td>
         </tr>
     {% endfor %}

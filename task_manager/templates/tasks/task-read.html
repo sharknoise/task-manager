@@ -33,7 +33,7 @@
           <div class="col">
             <a href="{% url 'task_update' object.id %}">{% trans 'Edit' %}</a>
             <br>
-            <a href="#">{% trans 'Delete' %}</a>
+            <a href="{% url 'task_delete' object.id %}">{% trans 'Delete' %}</a>
           </div>
         </div>
       </div>
