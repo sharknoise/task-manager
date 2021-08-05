@@ -4,6 +4,8 @@ body {
 .main-content {
   padding: 3rem 1.5rem;
   text-align: center;
+  line-height: 4rem;
+  font-size: large;
 }
 .edit-delete-cell {
   width: 5rem;

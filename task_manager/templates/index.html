@@ -4,8 +4,20 @@
 {% block content %}
   <div class="main-content">
     <h1>{% trans 'Task Manager' %}</h1>
-    <p class="lead">{% trans '[site under construction]' %}
-      <br> ... 
-    </p>
+      {% url 'tasks_list' as tasks %}
+      {% url 'users_list' as users %}
+      {% url 'statuses_list' as statuses %}
+      <p>
+        {% blocktrans %}
+        Add <a href={{ tasks }}>tasks</a>, assign tasks to <a href={{ users }}>performers</a>, keep track of your progress by changing task <a href={{ statuses }}>status</a>.
+        {% endblocktrans %}
+      </p>
+      <p>
+        {% if user.is_authenticated %}
+          {% trans 'Welcome' %}, {{ user.get_full_name }}!
+        {% else %}
+          <a href="{% url 'register' %}">{% trans "Create an account" %}</a>
+        {% endif %}
+      </p>
   </div>
 {% endblock %}
