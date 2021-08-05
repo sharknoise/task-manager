@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-02 18:12+0000\n"
+"POT-Creation-Date: 2021-08-05 18:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,14 +19,19 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
+
 #: statuses/views.py:29
 msgid "The status has been created."
 msgstr "Статус создан."
 
-#: statuses/views.py:50
+#: statuses/views.py:51
 msgid "The status has been deleted."
 msgstr "Статус удален."
 
-#: statuses/views.py:73
+#: statuses/views.py:53
+msgid "Unable to delete the status as it is attached to a task."
+msgstr "Невозможно удалить статус, так как он использован в задаче."
+
+#: statuses/views.py:67
 msgid "The status has been updated."
 msgstr "Статус обновлен."

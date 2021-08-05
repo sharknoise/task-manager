@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-02 18:12+0000\n"
+"POT-Creation-Date: 2021-08-05 18:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,22 +32,28 @@ msgstr "Фамилия"
 msgid "You are not authorized to access this page."
 msgstr "У вас недостаточно прав для доступа к этой странице."
 
-#: users/views.py:27
+#: users/views.py:28
 msgid "You have successfully registered!"
 msgstr "Вы успешно зарегистрировались!"
 
-#: users/views.py:32
+#: users/views.py:33
 msgid "You are logged in."
 msgstr "Вы вошли в систему."
 
-#: users/views.py:38
+#: users/views.py:39
 msgid "You have logged out."
 msgstr "Вы вышли из системы."
 
-#: users/views.py:53
+#: users/views.py:55
 msgid "You have deleted your account."
 msgstr "Ваш профиль был удален."
 
-#: users/views.py:66
+#: users/views.py:57
+msgid "Unable to delete the account: this user has a task assigned."
+msgstr ""
+"Невозможно удалить профиль пользователя, который назначен исполнителем "
+"задачи."
+
+#: users/views.py:71
 msgid "Your profile has been updated."
 msgstr "Ваш профиль был обновлен."
