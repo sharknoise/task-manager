@@ -4,13 +4,14 @@ body {
 .main-content {
   padding: 3rem 1.5rem;
   text-align: center;
-  line-height: 4rem;
   font-size: large;
+}
+.welcome {
+  margin-bottom: 3rem;
 }
 .edit-delete-cell {
   width: 5rem;
 }
-
 .btn {
   margin-top: 1rem;
   margin-bottom: 1rem;
