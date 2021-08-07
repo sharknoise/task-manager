@@ -48,12 +48,14 @@ INSTALLED_APPS = [
     'tasks',
     'users',
     'statuses',
+    'api',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
 ]
 
 AUTH_USER_MODEL = 'users.UserModel'
