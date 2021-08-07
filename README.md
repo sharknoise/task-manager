@@ -10,6 +10,7 @@ Features implemented:
 - assigning tasks to other users
 - setting task status, creating custom statuses
 - editing and deleting your account 
+- basic public API to get a detailed list of tasks 
 - English and Russian versions (displayed depending on your browser settings)
   
 Features planned:
