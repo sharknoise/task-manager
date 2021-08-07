@@ -1,11 +1,21 @@
 from rest_framework import serializers
 
+from tasks.models import Task
 
-class TaskSerializer(serializers.Serializer):
-    id = serializers.IntegerField()
-    name = serializers.CharField(max_length=100)
-    description = serializers.CharField()
-    created = serializers.DateTimeField()
+
+class TaskSerializer(serializers.ModelSerializer):
     author = serializers.CharField()
     executor = serializers.CharField()
     status = serializers.CharField()
+
+    class Meta(object):
+        model = Task
+        fields = [
+            'id',
+            'name',
+            'description',
+            'created',
+            'author',
+            'executor',
+            'status',
+        ]
