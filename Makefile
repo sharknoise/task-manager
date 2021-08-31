@@ -11,7 +11,8 @@ lint:
 
 .PHONY: migrate
 migrate:
-	heroku run python manage.py migrate -a sharknoise-task-manager
+	poetry run python manage.py makemigrations
+	poetry run python manage.py migrate
 
 .PHONY: venv
 venv: .venv
