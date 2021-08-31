@@ -26,6 +26,16 @@
           <div class="col">{{ object.status }}</div>
         </div>
         <div class="row p-1">
+          <div class="col">{% trans 'Labels' %}</div>
+          <div class="col">
+            <ul class="list-unstyled">
+                {% for label in object.labels.all %}
+                <li>{{ label }}</li>
+                {% endfor %}
+            </ul>
+          </div>
+      </div>
+        <div class="row p-1">
           <div class="col">{% trans 'Date created' %}</div>
           <div class="col">{{ object.created }}</div>
         </div>

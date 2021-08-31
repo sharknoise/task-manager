@@ -31,7 +31,7 @@ class TaskCreateView(
     generic.edit.CreateView,
 ):
     model = Task
-    fields = ['name', 'status', 'description', 'executor']
+    fields = ['name', 'status', 'labels', 'description', 'executor']
     template_name = 'tasks/task-create.html'
     success_url = reverse_lazy('tasks_list')
     success_message = _('You have created a new task!')
@@ -49,7 +49,7 @@ class TaskUpdateView(
 ):
     model = Task
     template_name = 'tasks/task-update.html'
-    fields = ['name', 'status', 'description', 'executor']
+    fields = ['name', 'status', 'labels', 'description', 'executor']
     success_message = _('The task has been updated.')
     success_url = reverse_lazy('tasks_list')
 
