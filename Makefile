@@ -1,7 +1,7 @@
 .PHONY: test
 test:
 	poetry run coverage run --include='task_manager/*',\
-	'statuses/*','tasks/*','users/*','api/*' manage.py test
+	'statuses/*','tasks/*','users/*','api/*','labels/*' manage.py test
 	poetry run coverage xml
 	poetry run coverage report
 

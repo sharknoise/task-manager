@@ -4,7 +4,7 @@
 {% block content %}
   <form method="post">
     {% csrf_token %}
-    <h1 class='h3 mb-4'>{% trans "Status deletion" %} </h1>
+    <h1 class='h3 mb-4'>{% trans "Label deletion" %} </h1>
     <p>{% trans "Are you sure you want to delete" %} <strong>{{ object.name }}</strong>?</p>
     <button class="btn btn-danger" type="submit">{% trans 'Yes, delete' %}</button>
   </form>
