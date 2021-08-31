@@ -3,7 +3,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/bfeb50561265e4d3d51c/maintainability)](https://codeclimate.com/github/sharknoise/task-manager/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/bfeb50561265e4d3d51c/test_coverage)](https://codeclimate.com/github/sharknoise/task-manager/test_coverage)
 ##
-A task management system built with Django. Current version: 0.8.0
+A task management system built with Django. Current version: 0.8.1
   
 Features implemented:
 - viewing, adding, editing, and deleting tasks

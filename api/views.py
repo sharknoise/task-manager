@@ -1,3 +1,4 @@
+from rest_framework.generics import ListAPIView
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
@@ -7,24 +8,16 @@ from users.models import UserModel
 
 
 class APIUsersListView(APIView):
-    """
-    List of all task manager users.
-    """
+    """List of all task manager users."""
 
     def get(self, request, format=None):
-        """
-        Return a list of all users.
-        """
+        """Return full names of all users without using a Serializer class."""
         usernames = [str(user) for user in UserModel.objects.all()]
         return Response(usernames)
 
 
-class APITasksView(APIView):
-    """
-    List of all tasks with detailed information.
-    """
-    def get(self, request):
-        tasks = Task.objects.all()
-        # 'many' parameter used to serialize more than a single task
-        serializer = TaskSerializer(tasks, many=True)
-        return Response({'tasks': serializer.data})
+class APITasksView(ListAPIView):
+    """List of all tasks with detailed information."""
+
+    queryset = Task.objects.all()
+    serializer_class = TaskSerializer
