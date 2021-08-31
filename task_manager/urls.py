@@ -26,6 +26,7 @@ urlpatterns = [
     path('statuses/', include('statuses.urls')),
     path('tasks/', include('tasks.urls')),
     path('api/', include('api.urls')),
+    path('labels/', include('labels.urls')),
     path('login/', users_views.LoginUserView.as_view(), name='login'),
     path('logout/', users_views.LogoutUserView.as_view(), name='logout'),
 ]
