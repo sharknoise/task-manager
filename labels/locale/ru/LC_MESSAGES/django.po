@@ -19,19 +19,26 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
+#: labels/models.py:10
+msgid "Name"
+msgstr "Название"
 
-#: statuses/views.py:29
-msgid "The status has been created."
-msgstr "Статус создан."
+#: labels/models.py:15
+msgid "Description"
+msgstr "Описание"
 
-#: statuses/views.py:51
-msgid "The status has been deleted."
-msgstr "Статус удален."
+#: labels/views.py:29
+msgid "The label has been created."
+msgstr "Метка создана."
 
-#: statuses/views.py:53
-msgid "Unable to delete the status as it is attached to a task."
-msgstr "Невозможно удалить статус, так как он использован в задаче."
+#: labels/views.py:51
+msgid "The label has been deleted."
+msgstr "Метка удалена."
 
-#: statuses/views.py:67
-msgid "The status has been updated."
-msgstr "Статус обновлен."
+#: labels/views.py:53
+msgid "Unable to delete the label as it is attached to a task."
+msgstr "Невозможно удалить метку, так как она использована в задаче."
+
+#: labels/views.py:67
+msgid "The label has been updated."
+msgstr "Метка обновлена."
