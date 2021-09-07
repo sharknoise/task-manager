@@ -4,11 +4,13 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
 from django.views import View, generic
+from django_filters.views import FilterView
 
 from task_manager.mixins import (
     LoginRequiredRedirectMixin,
     NoPermissionRedirectMixin,
 )
+from tasks.filters import TaskFilter
 from tasks.mixins import IsTaskAuthorMixin
 from tasks.models import Task
 
@@ -19,9 +21,10 @@ class IndexView(View):
         return render(request, 'index.html')
 
 
-class TasksListView(generic.ListView):
+class TasksListView(FilterView):
     model = Task
     template_name = 'tasks/tasks-list.html'
+    filterset_class = TaskFilter
 
 
 class TaskCreateView(

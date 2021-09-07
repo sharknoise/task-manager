@@ -4,6 +4,39 @@
 {% block content %}
 <h2>{% trans 'Tasks' %}</h2>
 <a href="{% url 'task_create' %}" class="btn btn-dark">{% trans 'Add a task' %}</a>
+<div class="card mb-3">
+  <div class="card-body">
+    <form class="form-inline center" method="get">
+        <div class="mr-4">
+          {% trans 'Filter by:' %}
+        </div>
+        <div class="form-group">
+          <label for="id_status">{% trans 'Status' %}</label>
+          <div class="ml-2 mr-4">{{ filter.form.status }}</div>
+        </div>
+        <div class="form-group is-valid">
+          <label for="id_labels">{% trans 'Label' %}</label>
+          <div class="mr-4 ml-2">{{ filter.form.labels }}</div>
+        </div>
+        <div class="form-group is-valid">
+          <label for="id_executor">{% trans 'Assigned to' %}</label>
+          <div class="mr-4 ml-2">{{ filter.form.executor }}</div>
+        </div>
+        {% if user.is_authenticated %}
+        <div class="form-group">
+          <div class="mr-4">
+            <div class="form-check">{{ filter.form.author_tasks }}
+              <label class="form-check-label ml-2" for="id_author_tasks">
+                {% trans 'My tasks only' %}
+              </label>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+        <input class="btn btn-dark" type="submit" value="{% trans 'Show' %}">
+    </form>
+  </div>
+</div>
 {% if object_list %}
 <div class="table-responsive">
   <table class="table table-striped table-sm">
@@ -19,7 +52,7 @@
       </tr>
     </thead>
     <tbody>
-    {% for object in object_list %}
+  {% for object in filter.qs %}
         <tr>
           <td>{{ object.id }}</td>
           <td><a href="{% url 'task_read' object.id %}">{{ object.name }}</a></td>
